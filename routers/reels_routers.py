@@ -5,13 +5,18 @@ from models.models import Video
 router = APIRouter(prefix="/reels", tags=["Reels"])
 templates = Jinja2Templates(directory="templates")
 
-video1 = Video(title="Showreel", url="/media/videos/Showreel 5.mp4")
-video2 = Video(title="Please insert a factory here", url="/media/videos/please_insert_a_factory_here_part_one (1080p).mp4")
-video3 = Video(title="Chain of Command", url="/media/videos/Chain Of Command.mp4")
-video4 = Video(title="Some things never change", url="/media/videos/Mira Yonder Showreel.mov")
-video5 = Video(title="From Here to Eternity", url="/media/videos/IAB_mono_HRISTO_720.mp4")
-video6 = Video(title="Voice Reel", url="/media/videos/Voice Reel.wav")
-video7 = Video(title="The Tinderbox", url="/media/videos/the_tinderbox (1080p).mp4")
+# S3 URL template
+BUCKET_NAME = 'hristobonevbucket'  # Replace with your S3 bucket name
+S3_BASE_URL = f"https://{BUCKET_NAME}.s3.eu-north-1.amazonaws.com/"
+
+# Videos with updated S3 URLs
+video1 = Video(title="Showreel", url=f"{S3_BASE_URL}media/videos/Showreel 5.mp4")
+video2 = Video(title="Please insert a factory here", url=f"{S3_BASE_URL}media/videos/please_insert_a_factory_here_part_one (1080p).mp4")
+video3 = Video(title="Chain of Command", url=f"{S3_BASE_URL}media/videos/Chain Of Command.mp4")
+video4 = Video(title="Some things never change", url=f"{S3_BASE_URL}media/videos/Mira Yonder Showreel.mov")
+video5 = Video(title="From Here to Eternity", url=f"{S3_BASE_URL}media/videos/IAB_mono_HRISTO_720.mp4")
+video6 = Video(title="Voice Reel", url=f"{S3_BASE_URL}media/videos/Voice Reel.wav")
+video7 = Video(title="The Tinderbox", url=f"{S3_BASE_URL}media/videos/the_tinderbox (1080p).mp4")
 
 videos = [video1, video6, video3, video2, video7, video5, video4]
 

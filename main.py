@@ -25,7 +25,7 @@ app.include_router(gallery_router)
 
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
-app.mount("/media", StaticFiles(directory="media"), name="media")
+app.mount("https://hristobonevbucket.s3.eu-north-1.amazonaws.com/media/", StaticFiles(directory="media"), name="media")
 app.mount("/scripts", StaticFiles(directory="scripts"), name="scripts")
 
 
