@@ -7,6 +7,10 @@ from routers.contact_routers import router as contact_router
 from routers.gallery_routers import router as gallery_router
 from fastapi.staticfiles import StaticFiles
 import uvicorn
+import boto3
+
+
+s3_client = boto3.client('s3')
 
 app = FastAPI()
 
