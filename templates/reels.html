@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Videos{% endblock %}
+{% block content %}
+<main class="videos-main">
+    <div class="videos-container">
+        <h1 class="videos-title">My Reels and Videos</h1>
+        <div class="central-video">
+            <video id="centralVideo" src="{{ videos[0].url }}" controls controlsList="nodownload"></video>
+            <h3 id="centralVideoTitle">{{ videos[0].title }}</h3>
+        </div>
+        <div class="videos-grid">
+            {% for video in videos %}
+            <div class="video-card" onclick="updateCentralVideo('{{ video.url }}', '{{ video.title }}')">
+                <video src="{{ video.url }}"></video>
+                <h3>{{ video.title }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            {% if current_page > 1 %}
+                <a href="?page={{ current_page - 1 }}">&laquo; Previous</a>
+            {% else %}
+                <span>&laquo; Previous</span>
+            {% endif %}
+        
+            {% if current_page < total_pages %}
+                <a href="?page={{ current_page + 1 }}">Next &raquo;</a>
+            {% else %}
+                <span>Next &raquo;</span>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        function updateCentralVideo(src, title) {
+            const centralVideo = document.getElementById('centralVideo');
+            const centralVideoTitle = document.getElementById('centralVideoTitle');
+            
+            centralVideo.src = src;
+            centralVideoTitle.textContent = title;
+            
+            centralVideo.play();
+        }
+    </script>
+</main>
+
+{% endblock %}

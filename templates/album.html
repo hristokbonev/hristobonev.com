@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{{ album_name }}{% endblock %}
+{% block content %}
+<main class="album-main">
+    <div class="album-container">
+        <h1 class="album-title">{{ album_name }}</h1>
+        <div class="photos-grid">
+            {% for photo in photos %}
+            <div class="photo-item">
+                <img src="{{ photo.src }}" alt="{{ photo.title }}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-prev">&lt;</button>
+        <button class="lightbox-next">&gt;</button>
+        <div class="lightbox-content">
+            <img class="lightbox-image" src="" alt="">
+            <div class="loading">Loading...</div>
+        </div>
+    </div>
+    <script src="/scripts/album_script.js"></script>
+</main>
+{% endblock %}

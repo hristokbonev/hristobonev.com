@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Hristo Bonev{% endblock %}
+
+{% block content %}
+    <!-- Performing Section -->
+     <main>
+    <div class="section performing">
+        <a href="/about-me" class="section-link">
+            <video id="performanceVideo" src="/media/videos/Chain Of Command.mp4" muted loop disablepictureinpicture></video>
+            <div class="text">My Art</div>
+        </a>
+    </div>
+
+    <!-- Me Section -->
+    <div class="section">
+        <a href="/about-me" target="_blank">
+            <img src='/media/images/582e4aef44b5d.jpg' alt="Your Photo">
+            <div class="text">Myself</div>
+        </a>
+    </div>
+
+    <!-- Coding Section -->
+    <div class="section coding">
+        <a href="/projects">
+            <video src="/media/videos/5495899-hd_1080_1920_30fps.mp4" muted loop disablepictureinpicture></video>
+            <div class="text">My Craft</div>
+        </a>
+    </div>
+
+    <script src="/scripts/scripts.js"></script>
+
+</main>
+    
+{% endblock %}

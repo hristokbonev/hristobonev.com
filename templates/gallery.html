@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Gallery{% endblock %}
+{% block content %}
+<main class="gallery-main">
+    <div class="gallery-container">
+        <h1 class="gallery-title">My Gallery</h1>
+        <div class="albums-grid">
+            {% for album in albums %}
+            <div class="album-item">
+                <a href="/gallery/{{ album.name }}">
+                    <img src="{{ album.cover }}" alt="{{ album.name }}">
+                    <h3>{{ album.name }}</h3>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}

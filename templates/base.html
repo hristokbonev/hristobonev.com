@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Hristo Bonev{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+
+<body>
+
+    <header>
+    <!-- Header content, such as navigation links -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about-me">Bio</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/reels">Reels</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    
+    {% block content %}{% endblock %}
+    
+
+    <footer>
+        <div class="footer-content">
+        <ul>
+            <li><a href="https://www.instagram.com/hbonev" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/hristo-bonev" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/hristokbonev" target="_blank"><i class="fab fa-github"></i></a></li>
+        </ul>
+        </div>
+    </footer>
+
+
+</body>
+</html>
