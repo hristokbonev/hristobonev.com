@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Request
 from fastapi.templating import Jinja2Templates
 from dotenv import load_dotenv
-from fastapi.responses import RedirectResponse
 import os
 from models.models import Video
 from models.models import Photo
@@ -17,7 +16,7 @@ S3_BASE_URL = os.getenv("S3_BASE_URL")
 
 left_video = Video(title="Showreel", url=urljoin(S3_BASE_URL, "media/videos/Chain Of Command.mp4"))
 right_video = Video(title="Coding", url=urljoin(S3_BASE_URL, "media/videos/5495899-hd_1080_1920_30fps.mp4"))
-centre_image = Photo(title="Myself", url=urljoin(S3_BASE_URL, "media/images/582e4aef44b5d.jpg"))
+centre_image = Photo(name="Myself", url=urljoin(S3_BASE_URL, "media/images/582e4aef44b5d.jpg"))
 
 @router.get('/', response_model=None)
 def serve_homepage(request: Request = None):
