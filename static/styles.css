@@ -314,6 +314,18 @@ footer .footer-content:last-of-type {
     font-size: 0.8em;
 }
 
+/* Theme-specific styles */
+.performing, .coding {
+    background: black;
+}
+
+.performing-text, .me-text, .coding-text {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    font-size: 3em;
+}
+    
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .bio-container {
