@@ -262,10 +262,10 @@ main {
 /* Footer Styles */
 footer {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Changed to center for overall layout */
     align-items: center;
     background-color: #000000;
-    padding: 10px 0;
+    padding: 10px 20px;
     width: 100%;
     height: var(--footer-height);
     position: fixed;
@@ -274,10 +274,22 @@ footer {
     z-index: 1000;
 }
 
+/* Center icons container */
+footer .footer-content:first-of-type {
+    position: absolute; /* Position it absolutely */
+    left: 50%; /* Move to center */
+    transform: translateX(-50%); /* Center perfectly */
+    display: flex;
+    justify-content: center;
+}
+
+/* Footer icon list styles */
 footer ul {
     list-style: none;
     display: flex;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 footer ul li a {
@@ -295,15 +307,11 @@ footer ul li a i {
     margin-right: 30px;
 }
 
-/* Theme-specific styles */
-.performing, .coding {
-    background: black;
-}
-
-.performing-text, .me-text, .coding-text {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 500;
-    font-size: 3em;
+/* Copyright Styles */
+footer .footer-content:last-of-type {
+    margin-left: auto; /* Push to the right */
+    color: white;
+    font-size: 0.8em;
 }
 
 /* Responsive Design */
