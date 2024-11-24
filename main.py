@@ -8,7 +8,6 @@ from routers.gallery_routers import router as gallery_router
 from fastapi.staticfiles import StaticFiles
 import uvicorn
 import boto3
-from botocore.exceptions import NoCredentialsError, PartialCredentialsError
 import os
 from dotenv import load_dotenv
 
