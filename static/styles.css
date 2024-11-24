@@ -3,10 +3,6 @@
     --footer-height: 40px;
 }
 
-img {
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-  }
 
 /* Reset Styles */
 * {
