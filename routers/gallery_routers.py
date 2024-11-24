@@ -2,13 +2,19 @@ from fastapi import APIRouter, Request, HTTPException
 from fastapi.templating import Jinja2Templates
 from models.models import Album, Photo
 import boto3
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 router = APIRouter(prefix="/gallery", tags=["Gallery"])
 templates = Jinja2Templates(directory="templates")
 
 s3_client = boto3.client('s3', region_name="eu-north-1")
-BUCKET_NAME = 'hristobonevbucket'
-ALBUMS_DIR = "media/albums"  
+
+BUCKET_NAME = os.getenv("BUCKET_NAME")
+ALBUMS_DIR = os.getenv("ALBUMS_DIR")
+
 
 def get_albums():
     albums = []
@@ -19,7 +25,7 @@ def get_albums():
             album_name = prefix['Prefix'].split('/')[-2]
 
             album_photos = s3_client.list_objects_v2(Bucket=BUCKET_NAME, Prefix=f"{ALBUMS_DIR}/{album_name}/")
-            
+
             if album_photos.get('Contents'):
                 cover_photo = album_photos['Contents'][0]['Key']  # Assume the first file is the cover
                 albums.append(Album(name=album_name, cover=f"https://{BUCKET_NAME}.s3.eu-north-1.amazonaws.com/{cover_photo}"))

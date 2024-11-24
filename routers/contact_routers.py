@@ -4,6 +4,7 @@ from fastapi.responses import RedirectResponse
 from common.email_services import send_email
 
 
+
 router = APIRouter(prefix="/contact", tags=["Contact"])
 templates = Jinja2Templates(directory="templates")
 

@@ -8,7 +8,11 @@ from routers.gallery_routers import router as gallery_router
 from fastapi.staticfiles import StaticFiles
 import uvicorn
 import boto3
+from botocore.exceptions import NoCredentialsError, PartialCredentialsError
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 s3_client = boto3.client('s3')
 
@@ -25,7 +29,6 @@ app.include_router(gallery_router)
 
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
-app.mount("https://hristobonevbucket.s3.eu-north-1.amazonaws.com/media/", StaticFiles(directory="media"), name="media")
 app.mount("/scripts", StaticFiles(directory="scripts"), name="scripts")
 
 

@@ -1,13 +1,17 @@
 from fastapi import APIRouter, Request
 from fastapi.templating import Jinja2Templates
 from models.models import Video
+from dotenv import load_dotenv
+import os
 
 router = APIRouter(prefix="/reels", tags=["Reels"])
 templates = Jinja2Templates(directory="templates")
 
-# S3 URL template
-BUCKET_NAME = 'hristobonevbucket'  # Replace with your S3 bucket name
-S3_BASE_URL = f"https://{BUCKET_NAME}.s3.eu-north-1.amazonaws.com/"
+load_dotenv()
+
+S3_BASE_URL = os.getenv("S3_BASE_URL")
+
+
 
 # Videos with updated S3 URLs
 video1 = Video(title="Showreel", url=f"{S3_BASE_URL}media/videos/Showreel 5.mp4")
