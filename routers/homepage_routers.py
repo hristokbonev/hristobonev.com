@@ -14,7 +14,7 @@ templates = Jinja2Templates(directory="templates")
 
 S3_BASE_URL = "https://hristobonevbucket.s3.eu-north-1.amazonaws.com/"
 
-left_video = Video(title="Showreel", url=urljoin(S3_BASE_URL, "media/videos/Chain+of+Command+short.mp4"))
+left_video = Video(title="Showreel", url=urljoin(S3_BASE_URL, "media/videos/media/videos/Chain+of+Command+short+(1).mp4"))
 right_video = Video(title="Coding", url=urljoin(S3_BASE_URL, "media/videos/5495899-hd_1080_1920_30fps.mp4"))
 centre_image = Photo(name="Myself", url=urljoin(S3_BASE_URL, "media/images/582e4aef44b5d.jpg"))
 
