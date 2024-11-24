@@ -3,6 +3,7 @@ from fastapi.templating import Jinja2Templates
 from models.models import Video
 from dotenv import load_dotenv
 import os
+from urllib.parse import urljoin
 
 router = APIRouter(prefix="/reels", tags=["Reels"])
 templates = Jinja2Templates(directory="templates")
@@ -14,13 +15,13 @@ S3_BASE_URL = os.getenv("S3_BASE_URL")
 
 
 # Videos with updated S3 URLs
-video1 = Video(title="Showreel", url=f"{S3_BASE_URL}media/videos/Showreel 5.mp4")
-video2 = Video(title="Please insert a factory here", url=f"{S3_BASE_URL}media/videos/please_insert_a_factory_here_part_one (1080p).mp4")
-video3 = Video(title="Chain of Command", url=f"{S3_BASE_URL}media/videos/Chain Of Command.mp4")
-video4 = Video(title="Some things never change", url=f"{S3_BASE_URL}media/videos/Mira Yonder Showreel.mov")
-video5 = Video(title="From Here to Eternity", url=f"{S3_BASE_URL}media/videos/IAB_mono_HRISTO_720.mp4")
-video6 = Video(title="Voice Reel", url=f"{S3_BASE_URL}media/videos/Voice Reel.wav")
-video7 = Video(title="The Tinderbox", url=f"{S3_BASE_URL}media/videos/the_tinderbox (1080p).mp4")
+video1 = Video(title="Showreel", url=urljoin(S3_BASE_URL, "media/videos/Showreel 5.mp4"))
+video2 = Video(title="Please insert a factory here", url=urljoin(S3_BASE_URL, "media/videos/please_insert_a_factory_here_part_one (1080p).mp4"))
+video3 = Video(title="Chain of Command", url=urljoin(S3_BASE_URL, "media/videos/Chain Of Command.mp4"))
+video4 = Video(title="Some things never change", url=urljoin(S3_BASE_URL, "media/videos/Mira Yonder Showreel.mov"))
+video5 = Video(title="From Here to Eternity", url=urljoin(S3_BASE_URL, "media/videos/IAB_mono_HRISTO_720.mp4"))
+video6 = Video(title="Voice Reel", url=urljoin(S3_BASE_URL, "media/videos/Voice Reel.wav"))
+video7 = Video(title="The Tinderbox", url=urljoin(S3_BASE_URL, "media/videos/the_tinderbox (1080p).mp4"))
 
 videos = [video1, video6, video3, video2, video7, video5, video4]
 

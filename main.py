@@ -18,7 +18,6 @@ s3_client = boto3.client('s3')
 
 app = FastAPI()
 
-
 app.include_router(homapage_router)
 app.include_router(about_me_router)
 app.include_router(projects_router)
