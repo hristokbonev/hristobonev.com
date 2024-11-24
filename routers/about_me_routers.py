@@ -19,7 +19,7 @@ right_video = Video(
 )
 resume = {
     "title": "Resume",
-    "url": urljoin(S3_BASE_URL, "media/resume/HristoBonevCV.pdf")
+    "url": urljoin(S3_BASE_URL, "media/documents/HristoBonevResume (2).pdf")
 }
 
 router = APIRouter(prefix='/about-me', tags=['About Me'])
