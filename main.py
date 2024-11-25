@@ -29,10 +29,3 @@ app.include_router(gallery_router)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/scripts", StaticFiles(directory="scripts"), name="scripts")
 app.mount("/.well-known", StaticFiles(directory=".well-known"), name="well-known")
-
-
-
-
-if __name__ == "__main__":
-
-    uvicorn.run(app, host="127.0.0.1", port=8000)
