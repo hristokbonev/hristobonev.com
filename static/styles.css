@@ -193,16 +193,27 @@ main {
     background: rgba(255, 255, 255, 0.4);
 }
 
-.bio-content h2 {
+.bio-content h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5em;
     font-weight: 600;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     letter-spacing: 0.5px;
     background: linear-gradient(45deg, #fff, #ddd);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.bio-content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.7);  /* Subtle, lighter color */
+    text-align: left;
+    letter-spacing: 1px;
+}
+
 
 .bio-content p {
     font-family: 'Open Sans', sans-serif;
