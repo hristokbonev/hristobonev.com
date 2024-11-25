@@ -21,6 +21,27 @@
             <li><a href="/contact">Contact</a></li>
             <li><a href="/gallery">Gallery</a></li>
         </ul>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+        
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-me">Bio</a></li>
+                            <li><a href="/projects">Projects</a></li>
+                            <li><a href="/reels">Reels</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="/gallery">Gallery</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+            
     </nav>
     </header>
 
@@ -40,6 +61,38 @@
             <span class="copyright">© 2024 Hristo Bonev</span>
         </div>
     </footer>
+
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.mobile-menu-button');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            
+            menuButton.addEventListener('click', function() {
+                dropdownMenu.classList.toggle('active');
+                const icon = menuButton.querySelector('i');
+                if (dropdownMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.mobile-menu-button') && 
+                    !event.target.closest('.dropdown-menu')) {
+                    dropdownMenu.classList.remove('active');
+                    const icon = menuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
 
 
 </body>

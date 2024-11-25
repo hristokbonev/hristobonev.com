@@ -1135,3 +1135,126 @@ button[type="submit"]:hover {
 .gallery-main::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.4);
 }
+
+
+
+/* Mobile Menu Styles */
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-menu ul {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dropdown-menu ul li {
+    width: 100%;
+    text-align: center;
+}
+
+.dropdown-menu ul li a {
+    padding: 10px;
+    width: 100%;
+    display: block;
+}
+
+/* Updated Main Content Styles for Mobile */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .section {
+        height: 33.333vh;
+        min-height: 250px;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    header nav > ul {
+        display: none;
+    }
+
+    .text {
+        font-size: 2em !important;
+    }
+
+    /* Footer adjustments */
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+    }
+
+    footer .footer-content:first-of-type {
+        position: relative;
+        left: 0;
+        transform: none;
+        margin-bottom: 10px;
+    }
+
+    footer ul {
+        gap: 15px;
+    }
+
+    footer ul li a i {
+        margin-right: 15px;
+    }
+
+    .footer-content:last-of-type {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        min-height: 200px;
+    }
+
+    .text {
+        font-size: 1.8em !important;
+    }
+
+    footer ul {
+        gap: 10px;
+    }
+}
+
+/* Additional responsive adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+    .section {
+        height: 50vh;
+        min-height: 200px;
+    }
+}
