@@ -493,7 +493,7 @@ footer .footer-content:last-of-type {
     font-weight: 600;
     margin-bottom: 40px;
     text-align: center;
-    background: linear-gradient(45deg, #ffffff, #ffffff);
+    background: white;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -545,7 +545,7 @@ footer .footer-content:last-of-type {
 }
 
 .tech-tag {
-    background: rgb(55, 65, 81);
+    background: rgb(132, 132, 132);
     color: rgb(255, 255, 255);
     padding: 5px 12px;
     border-radius: 15px;
@@ -567,13 +567,13 @@ footer .footer-content:last-of-type {
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9em;
     padding: 8px 16px;
-    border-radius: 20px;
-    background: rgb(55, 65, 81);
+    border-radius: px;
+    background: rgb(132, 132, 132);
     transition: background 0.3s ease;
 }
 
 .project-link:hover {
-    background: rgba(55, 65, 81, 0.468);
+    background: rgb(69, 69, 69);
 }
 
 .project-link i {
@@ -712,6 +712,7 @@ html, body {
     text-align: center;
     margin-bottom: 40px;
 }
+
 
 /* Central Video Styles */
 .central-video {
