@@ -145,21 +145,6 @@ main {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Bio Section Styles */
 .bio-section {
     height: 100%;
@@ -423,32 +408,6 @@ footer .footer-content:last-of-type {
         font-size: 0.9em;
     }
 
-    footer {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
-    footer .footer-content:first-of-type {
-        position: static;
-        transform: none;
-        margin-bottom: 10px;
-    }
-
-    footer ul {
-        gap: 15px;
-    }
-
-    footer ul li a i {
-        margin-right: 0;
-        font-size: 1.2em;
-    }
-
-    footer .footer-content:last-of-type {
-        margin-left: 0;
-        text-align: center;
-    }
-
     .performing-text, .me-text, .coding-text {
         font-size: 2em;
     }
@@ -481,9 +440,6 @@ footer .footer-content:last-of-type {
         font-size: 0.9em;
     }
 
-    footer ul {
-        gap: 10px;
-    }
 }
 
 /* Scrollbar adjustments for mobile */
@@ -833,9 +789,6 @@ html, body {
         max-width: 100%;
     }
 
-    footer { 
-        display: none;
-    }
 }
 
 @media (max-width: 480px) {
@@ -847,9 +800,7 @@ html, body {
     }
 
     /* Move the pagination above the footer on mobile */
-    footer { 
-        display: none;
-    }
+   
 }
     
 
@@ -1334,20 +1285,11 @@ button[type="submit"]:hover {
         padding: 15px 0;
     }
 
-    footer .footer-content:first-of-type {
-        position: relative;
-        left: 0;
-        transform: none;
-        margin-bottom: 10px;
-    }
 
     footer ul {
-        gap: 15px;
+        display: none;
     }
 
-    footer ul li a i {
-        margin-right: 15px;
-    }
 
     .footer-content:last-of-type {
         margin: 10px 0;
@@ -1363,9 +1305,6 @@ button[type="submit"]:hover {
         font-size: 1.8em !important;
     }
 
-    footer ul {
-        gap: 10px;
-    }
 }
 
 /* Additional responsive adjustments */
@@ -1387,7 +1326,7 @@ button[type="submit"]:hover {
     .section { /* Ensure the photo section remains visible */
         display: flex;
     }
-}
+
 
     .section .text {
         display: none;
@@ -1400,28 +1339,11 @@ button[type="submit"]:hover {
         transition: none; /* Disable hover transition effects */
     }
     
-
+}
 
 
     @media (max-width: 768px) {
 
-          /* Add a bottom spacer to prevent content from being hidden */
-    body::after {
-        content: '';
-        display: block;
-        height: 40px; /* Adjust this value as needed */
-        background-color: rgba(0, 0, 0, 0.722); /* Match your body background color */
-        position: relative;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-    }
-
-    /* Adjust main content to ensure it doesn't get completely covered */
-    main {
-        padding-bottom: 60px !important; /* Slightly more than the spacer height */
-    }
 
         /* Ensure html and body cover full height */
         html, body {
@@ -1442,17 +1364,17 @@ button[type="submit"]:hover {
             display: flex !important;
             flex-direction: column !important; /* Stack content inside main */
             margin-bottom: 0px !important;
-            padding-bottom: 0px !important;
+            padding-bottom: 20px !important;
         }
     
         /* Hide the footer completely and prevent any space from it */
         footer {
-            display: none !important; /* Ensure footer doesn't appear at all */
-        }
+            height: 10px;
+                }
     
         /* Optional: Set the body background color if needed */
         body {
-            background-color: #f0f0f0 !important; /* Change this to your preferred color */
+            background-color: #f0f0f093 !important; /* Change this to your preferred color */
         }
     
     }
@@ -1461,37 +1383,12 @@ button[type="submit"]:hover {
     
         /* Move the pagination above the footer on mobile */
         /* Ensure html and body cover full height */
-        html, body {
-            height: 100% !important;  /* Make sure body and html take the full viewport height */
-            margin: 0 !important;     /* Remove default margin */
-            padding: 0 !important;    /* Remove default padding */
-        }
-    
+        
         /* Use flexbox to make sure main stretches to fill available space */
         body {
             display: flex !important;
             flex-direction: column !important;
-            margin-bottom: 0px !important; /* Stack elements vertically */
-            padding-bottom: 0px !important;
-        }
-    
-        /* Main content styles */
-        main {
-            flex: 1 !important;  /* Allow main to grow and fill the available space */
-            display: flex !important;
-            flex-direction: column !important; /* Stack content inside main */
-            margin-bottom: 0px !important;
-            padding-bottom: 0px !important;
-        }
-    
-        /* Hide the footer completely and prevent any space from it */
-        footer {
-            display: none !important; /* Ensure footer doesn't appear at all */
-        }
-    
-        /* Optional: Set the body background color if needed */
-        body {
-            background-color: #f0f0f093 !important; /* Change this to your preferred color */
+           
         }
     
     }
