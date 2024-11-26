@@ -1424,4 +1424,10 @@ button[type="submit"]:hover {
     .social-media-mobile ul li a {
         font-size: 25px; /* Increase icon size */
     }
+
+    html, body {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+    }
 }
