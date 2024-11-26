@@ -1405,6 +1405,24 @@ button[type="submit"]:hover {
 
     @media (max-width: 768px) {
 
+          /* Add a bottom spacer to prevent content from being hidden */
+    body::after {
+        content: '';
+        display: block;
+        height: 40px; /* Adjust this value as needed */
+        background-color: rgba(0, 0, 0, 0.722); /* Match your body background color */
+        position: relative;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    /* Adjust main content to ensure it doesn't get completely covered */
+    main {
+        padding-bottom: 60px !important; /* Slightly more than the spacer height */
+    }
+
         /* Ensure html and body cover full height */
         html, body {
             height: 100% !important;  /* Make sure body and html take the full viewport height */
@@ -1473,7 +1491,7 @@ button[type="submit"]:hover {
     
         /* Optional: Set the body background color if needed */
         body {
-            background-color: #f0f0f0 !important; /* Change this to your preferred color */
+            background-color: #f0f0f093 !important; /* Change this to your preferred color */
         }
     
     }
