@@ -162,7 +162,7 @@ main {
     max-width: 900px;
     margin: 0;
     padding: 40px;
-    background-color: rgba(0, 0, 0, 0.722);
+    background: linear-gradient(135deg, rgba(5,5,10,0.85), rgba(15,15,20,0.9));
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -220,7 +220,7 @@ main {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgb(255, 255, 255);
     text-align: left;
 }
 
@@ -377,7 +377,7 @@ footer .footer-content:last-of-type {
         padding: 20px;
         padding-bottom: 10px;
         margin: 0;
-        background-color: rgba(0, 0, 0, 0.722);
+        background: linear-gradient(135deg, rgba(5,5,10,0.85), rgba(15,15,20,0.9));
     }
 
     .bio-content h1 {
@@ -472,7 +472,7 @@ footer .footer-content:last-of-type {
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
     margin-top: var(--header-height);
     margin-bottom: var(--footer-height);
-    background-color: rgba(0, 0, 0, 0.722);
+    background: linear-gradient(135deg, rgba(5,5,10,0.85), rgba(15,15,20,0.9));
     padding: 40px 20px;
     overflow-y: auto; /* Enable vertical scrolling */
     position: fixed; /* Keep the main content fixed */
@@ -506,7 +506,7 @@ footer .footer-content:last-of-type {
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgb(255, 255, 255);
     backdrop-filter: blur(10px);
     border-radius: 0px;
     overflow: hidden;
@@ -545,8 +545,8 @@ footer .footer-content:last-of-type {
 }
 
 .tech-tag {
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background: rgb(55, 65, 81);
+    color: rgb(255, 255, 255);
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.9em;
@@ -562,18 +562,18 @@ footer .footer-content:last-of-type {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9em;
     padding: 8px 16px;
     border-radius: 20px;
-    background: rgb(255, 255, 255);
+    background: rgb(55, 65, 81);
     transition: background 0.3s ease;
 }
 
 .project-link:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(55, 65, 81, 0.468);
 }
 
 .project-link i {
@@ -670,7 +670,7 @@ html, body {
 .videos-main {
     height: 100%;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.722);
+    background: linear-gradient(135deg, rgba(5,5,10,0.85), rgba(15,15,20,0.9));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -849,7 +849,7 @@ html, body {
 .videos-main {
     height: 100%;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.722);
+    background: linear-gradient(135deg, rgba(5,5,10,0.85), rgba(15,15,20,0.9));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -860,7 +860,7 @@ html, body {
     position: relative; /* Change from absolute to relative */
     height: 100%;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.722);
+    background: linear-gradient(135deg, rgba(5,5,10,0.85), rgba(15,15,20,0.9));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -870,7 +870,7 @@ html, body {
 /* Contact Page Styles */
 .contact-main {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.722);
+    background: linear-gradient(135deg, rgba(5,5,10,0.85), rgba(15,15,20,0.9));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -937,7 +937,7 @@ button[type="submit"]:hover {
 /* Gallery Page Styles */
 .gallery-main {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.722);
+    background: linear-gradient(135deg, rgba(5,5,10,0.85), rgba(15,15,20,0.9));
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -949,7 +949,7 @@ button[type="submit"]:hover {
     max-width: 1200px;
     width: 100%;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(250, 248, 240, 0.85);
     border-radius: 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -1006,7 +1006,7 @@ button[type="submit"]:hover {
 /* Album Page Styles */
 .album-main {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.722);
+    background: linear-gradient(135deg, rgba(5,5,10,0.85), rgba(15,15,20,0.9));
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align items to the top to allow scrolling */
@@ -1018,7 +1018,7 @@ button[type="submit"]:hover {
     max-width: 1200px;
     width: 100%;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(245, 248, 250, 0.9);
     border-radius: 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
