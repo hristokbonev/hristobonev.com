@@ -144,6 +144,22 @@ main {
     opacity: 1;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Bio Section Styles */
 .bio-section {
     height: 100%;
@@ -336,75 +352,6 @@ footer .footer-content:last-of-type {
     font-weight: 500;
     font-size: 3em;
 }
-    
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .bio-container {
-        padding: 25px;
-    }
-
-    .bio-content h2 {
-        font-size: 2em;
-    }
-
-    .bio-content p {
-        font-size: 1em;
-        line-height: 1.6;
-    }
-
-    header nav ul {
-        gap: 20px;
-    }
-
-    main {
-        flex-direction: column;
-        height: auto;
-        min-height: calc(100vh - var(--header-height) - var(--footer-height));
-    }
-
-    .bio-left, .bio-right {
-        padding: 20px;
-        flex-direction: column;
-        flex: none;
-        width: 100%;
-        height: auto;
-        min-height: 300px;
-    }
-
-    .bio-left h3, .bio-right h3 {
-        font-size: 2.5em;
-        text
-    }
-
-    .bio-left video, .bio-right video {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .bio-container {
-        padding: 20px;
-    }
-
-    .bio-content h2 {
-        font-size: 1.8em;
-    }
-
-    header nav ul {
-        gap: 15px;
-    }
-
-    footer ul {
-        gap: 15px;
-    }
-
-    footer ul li a i {
-        margin-right: 15px;
-    }
-}
-
 
 .bio-left, .bio-right {
     position: relative; /* Ensure z-index works */
@@ -420,6 +367,147 @@ footer .footer-content:last-of-type {
     filter:brightness(1.5) saturate(1.5) ;
     opacity: 1;
 }
+
+
+
+
+
+
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .bio-main {
+        flex-direction: column;
+        height: auto;
+        overflow: auto;
+    }
+
+    .bio-section {
+        padding: 0;
+        height: auto;
+    }
+
+    .bio-container {
+        max-width: 100%;
+        padding: 20px;
+        padding-bottom: 10px;
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.722);
+    }
+
+    .bio-content h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .bio-content h2 {
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .bio-content p {
+        font-size: 1em;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    .bio-left, .bio-right {
+        height: 250px;
+        padding: 20px;
+        margin: 0;
+        order: -1;
+    }
+
+    .bio-left h3, .bio-right h3 {
+        font-size: 0.9em;
+    }
+
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    footer .footer-content:first-of-type {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+
+    footer ul {
+        gap: 15px;
+    }
+
+    footer ul li a i {
+        margin-right: 0;
+        font-size: 1.2em;
+    }
+
+    footer .footer-content:last-of-type {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .performing-text, .me-text, .coding-text {
+        font-size: 2em;
+    }
+
+    .bio-left, .bio-right video{
+        height: 200px;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+    .bio-container {
+        padding: 15px;
+        padding-bottom: 10px;
+    }
+
+    .bio-left, .bio-right {
+        height: 200px;
+    }
+
+    .bio-content h1 {
+        font-size: 1.8em;
+    }
+
+    .bio-content h2 {
+        font-size: 1.3em;
+    }
+
+    .bio-content p {
+        font-size: 0.9em;
+    }
+
+    footer ul {
+        gap: 10px;
+    }
+}
+
+/* Scrollbar adjustments for mobile */
+@media screen and (max-width: 768px) {
+    .bio-content::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .bio-content::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .bio-content::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+
+
+
+
+
+
+
 
 
 /* Projects Page Styles */
@@ -538,8 +626,15 @@ footer .footer-content:last-of-type {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    .projects-main {
+        height: auto;
+        position: relative;
+    }
+
     .projects-container {
         padding: 15px;
+        overflow: auto;
     }
 
     .projects-title {
@@ -549,9 +644,20 @@ footer .footer-content:last-of-type {
     .project-card {
         margin-bottom: 20px;
     }
+
 }
 
 @media (max-width: 480px) {
+
+    .projects-main {
+        height: auto;
+        position: relative;
+    }
+
+    .projects-container {
+        overflow: auto;
+    }
+
     .projects-main {
         padding: 20px 10px;
     }
@@ -572,6 +678,7 @@ footer .footer-content:last-of-type {
         width: 100%;
         justify-content: center;
     }
+
 }
 
 .projects-main::-webkit-scrollbar {
@@ -725,6 +832,10 @@ html, body {
     .central-video video {
         max-width: 100%;
     }
+
+    footer { 
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -734,7 +845,13 @@ html, body {
     .central-video {
         width: 100%;
     }
+
+    /* Move the pagination above the footer on mobile */
+    footer { 
+        display: none;
+    }
 }
+    
 
 .video-card video {
     aspect-ratio: 16 / 9; /* Maintain a consistent aspect ratio */
@@ -1256,5 +1373,137 @@ button[type="submit"]:hover {
     .section {
         height: 50vh;
         min-height: 200px;
+    }
+}
+
+
+/* Media Query for Phone Devices */
+@media (max-width: 768px) {
+    .section.performing, /* Hide the performing section */
+    .section.coding {    /* Hide the coding section */
+        display: none;
+    }
+
+    .section { /* Ensure the photo section remains visible */
+        display: flex;
+    }
+}
+
+    .section .text {
+        display: none;
+    }
+
+    .section:hover {
+        pointer-events: none; /* Disable hover interaction */
+        filter: none; /* Remove visual filter effects */
+        opacity: 1; /* Ensure no opacity changes */
+        transition: none; /* Disable hover transition effects */
+    }
+    
+
+
+
+    @media (max-width: 768px) {
+
+        /* Ensure html and body cover full height */
+        html, body {
+            height: 100% !important;  /* Make sure body and html take the full viewport height */
+            margin: 0 !important;     /* Remove default margin */
+            padding: 0 !important;    /* Remove default padding */
+        }
+    
+        /* Use flexbox to make sure main stretches to fill available space */
+        body {
+            display: flex !important;
+            flex-direction: column !important; /* Stack elements vertically */
+        }
+    
+        /* Main content styles */
+        main {
+            flex: 1 !important;  /* Allow main to grow and fill the available space */
+            display: flex !important;
+            flex-direction: column !important; /* Stack content inside main */
+            margin-bottom: 0px !important;
+            padding-bottom: 0px !important;
+        }
+    
+        /* Hide the footer completely and prevent any space from it */
+        footer {
+            display: none !important; /* Ensure footer doesn't appear at all */
+        }
+    
+        /* Optional: Set the body background color if needed */
+        body {
+            background-color: #f0f0f0 !important; /* Change this to your preferred color */
+        }
+    
+    }
+    
+    @media (max-width: 480px) {
+    
+        /* Move the pagination above the footer on mobile */
+        /* Ensure html and body cover full height */
+        html, body {
+            height: 100% !important;  /* Make sure body and html take the full viewport height */
+            margin: 0 !important;     /* Remove default margin */
+            padding: 0 !important;    /* Remove default padding */
+        }
+    
+        /* Use flexbox to make sure main stretches to fill available space */
+        body {
+            display: flex !important;
+            flex-direction: column !important;
+            margin-bottom: 0px !important; /* Stack elements vertically */
+            padding-bottom: 0px !important;
+        }
+    
+        /* Main content styles */
+        main {
+            flex: 1 !important;  /* Allow main to grow and fill the available space */
+            display: flex !important;
+            flex-direction: column !important; /* Stack content inside main */
+            margin-bottom: 0px !important;
+            padding-bottom: 0px !important;
+        }
+    
+        /* Hide the footer completely and prevent any space from it */
+        footer {
+            display: none !important; /* Ensure footer doesn't appear at all */
+        }
+    
+        /* Optional: Set the body background color if needed */
+        body {
+            background-color: #f0f0f0 !important; /* Change this to your preferred color */
+        }
+    
+    }
+    
+    /* Hide social media icons by default (for larger screens) */
+.social-media-mobile {
+    display: none;
+}
+
+/* Show social media icons on mobile screens */
+@media (max-width: 768px) {
+    .social-media-mobile {
+        display: block;
+        align-items: left;
+        position: absolute;
+        left: 20px;
+        
+    }
+
+    .social-media-mobile ul {
+        list-style: none;
+        display: flex;
+        gap: 22px;
+    }
+
+    .social-media-mobile ul li {
+        display: inline-block;
+    }
+
+    .social-media-mobile ul li a {
+        font-size: 25px; /* Increase icon size */
     }
 }
