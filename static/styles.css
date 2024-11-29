@@ -207,7 +207,7 @@ main {
 
 .bio-content h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.8em;
+    font-size: 1.7em;
     font-weight: 400;
     margin-bottom: 30px;
     color: rgba(255, 255, 255, 0.7);  /* Subtle, lighter color */
@@ -1380,7 +1380,7 @@ button[type="submit"]:hover {
             background-color: #f0f0f093 !important; /* Change this to your preferred color */
         }
     
-    }
+    }>
     
     @media (max-width: 480px) {
     
