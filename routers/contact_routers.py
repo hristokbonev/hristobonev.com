@@ -17,10 +17,10 @@ async def contact(request: Request):
 
 @router.post("/")
 async def submit_contact(request: Request, name: str = Form(...), email: str = Form(...), 
-                         message: str = Form(...), recaptcha_token: str = Form(...)):
+                         message: str = Form(...), g_recaptcha_response: str = Form(...)):
     # Here you can handle the form submission, e.g., send an email or save to a database
 
-    is_valid = await allow_action(token=recaptcha_token)
+    is_valid = await allow_action(token=g_recaptcha_response)
 
     if not is_valid:
         return RedirectResponse(url="/contact", status_code=303)

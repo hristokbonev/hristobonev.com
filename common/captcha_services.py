@@ -9,7 +9,7 @@ recaptcha_secret_key = os.getenv("RECAPTCHA_SECRET_KEY")
 recaptcha_site_key = os.getenv("RECAPTCHA_SITE_KEY")
 
 def create_assessment(
-    token: str, recaptcha_action: str='submit', recaptcha_key: str=recaptcha_secret_key, project_id: str = 'deep-lore-428512-u7'
+    token: str, recaptcha_action: str='submit', recaptcha_key: str=recaptcha_site_key, project_id: str = 'deep-lore-428512-u7'
 ) -> Assessment:
     """Create an assessment to analyse the risk of a UI action.
     Args:
@@ -71,7 +71,7 @@ def create_assessment(
 
 
 
-def allow_action(token: str, recaptcha_action: str='submit', recaptcha_key: str=recaptcha_secret_key, project_id: str = 'deep-lore-428512-u7') -> bool:
+def allow_action(token: str, recaptcha_action: str='submit', recaptcha_key: str=recaptcha_site_key, project_id: str = 'deep-lore-428512-u7') -> bool:
     
     response = create_assessment(token=token, recaptcha_action=recaptcha_action, recaptcha_key=recaptcha_key, project_id=project_id)
     return response.risk_analysis.score > 0.5
