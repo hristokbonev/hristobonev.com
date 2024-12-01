@@ -17,8 +17,12 @@ async def contact(request: Request):
 
 @router.post("/")
 async def submit_contact(request: Request, name: str = Form(...), email: str = Form(...), 
-                         message: str = Form(...), g_recaptcha_response: str = Form(...)):
+                         message: str = Form(...)):
     # Here you can handle the form submission, e.g., send an email or save to a database
+
+    form_data = await request.form()
+    
+    g_recaptcha_response = form_data.get("g-recaptcha-response")
 
     is_valid = await allow_action(token=g_recaptcha_response)
 
