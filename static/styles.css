@@ -934,6 +934,12 @@ button[type="submit"]:hover {
     background-color: #00000087;
 }
 
+/* reCAPTCHA Styles */
+.g-recaptcha {
+    margin: 0 auto 20px auto; /* Center the reCAPTCHA */
+    display: block; /* Ensure it takes up block space */
+    width: auto; /* Allow the width to be dynamic */
+}
 
 /* Gallery Page Styles */
 .gallery-main {
