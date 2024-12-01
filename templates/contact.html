@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Contact{% endblock %}
 {% block head %}
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lf5a48qAAAAAAFQJxwv0UKOokY2VEWRIBmQ-s1A"></script>
+    <script src=<script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>></script>
 {% endblock %}
 {% block content %}
 <main class="contact-main">
@@ -21,11 +21,7 @@
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
 
-            <div class="g-recaptcha" 
-         data-sitekey= "6Lf5a48qAAAAAAFQJxwv0UKOokY2VEWRIBmQ-s1A"
-         data-callback="onSubmit"
-         data-action="submit">
-            </div>
+            <div class="g-recaptcha" data-sitekey="6LeLm48qAAAAAKvXuChQGW_wX5w0JumODNLJG_dl" data-action="LOGIN"></div>
 
             <button type="submit">Send Message</button>
 
@@ -40,17 +36,7 @@
             document.getElementById("email-link").innerHTML = emailLink;
         });
 
-        function onSubmit(token) {
-        // Add the reCAPTCHA token as a hidden input field to the form
-        const recaptchaInput = document.createElement("input");
-        recaptchaInput.type = "hidden";
-        recaptchaInput.name = "recaptcha_token";  // This should match your backend handler
-        recaptchaInput.value = token;
-        document.querySelector(".contact-form").appendChild(recaptchaInput);
         
-        // Submit the form after adding the token
-        document.querySelector(".contact-form").submit();
-    }
     </script>
 </main>
 {% endblock %}
