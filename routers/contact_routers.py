@@ -3,7 +3,6 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import RedirectResponse
 from common.email_services import send_email
 from common.captcha_services import allow_action
-import os
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -14,7 +13,7 @@ templates = Jinja2Templates(directory="templates")
 
 @router.get("/")
 async def contact(request: Request):
-    return templates.TemplateResponse("contact.html", {"request": request}, context={"recaptcha_site_key": recaptcha_secret_key})
+    return templates.TemplateResponse("contact.html", {"request": request})
 
 @router.post("/")
 async def submit_contact(request: Request, name: str = Form(...), email: str = Form(...), 
