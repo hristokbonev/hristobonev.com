@@ -16,7 +16,7 @@ templates = Jinja2Templates(directory="templates")
 
 
 @router.get("/")
-async def contact(request: Request)
+async def contact(request: Request):
     return templates.TemplateResponse("contact.html", {"request": request}, context={"recaptcha_site_key": recaptcha_secret_key})
 
 @router.post("/")
