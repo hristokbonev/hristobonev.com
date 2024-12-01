@@ -8,6 +8,7 @@ load_dotenv()
 recaptcha_secret_key = os.getenv("RECAPTCHA_SECRET_KEY")
 recaptcha_site_key = os.getenv("RECAPTCHA_SITE_KEY")
 
+
 def create_assessment(
     token: str, recaptcha_action: str='submit', recaptcha_key: str=recaptcha_site_key, project_id: str = 'deep-lore-428512-u7'
 ) -> Assessment:
