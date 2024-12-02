@@ -12,7 +12,14 @@ recaptcha_site_key = os.getenv("RECAPTCHA_SITE_KEY")
 def create_assessment(
     token: str, recaptcha_action: str='submit', recaptcha_key: str=recaptcha_site_key, project_id: str = 'deep-lore-428512-u7'
 ) -> Assessment:
-    """Create an assessment to analyze the risk of a UI action."""
+    """Create an assessment to analyse the risk of a UI action.
+    Args:
+        project_id: Your Google Cloud project ID.
+        recaptcha_key: The reCAPTCHA key associated with the site/app
+        token: The generated token obtained from the client.
+        recaptcha_action: Action name corresponding to the token.
+    """
+
     client = recaptchaenterprise_v1.RecaptchaEnterpriseServiceClient()
 
     # Set the properties of the event to be tracked.
@@ -30,34 +37,31 @@ def create_assessment(
     request.assessment = assessment
     request.parent = project_name
 
-    try:
-        # Send the request and get the response
-        response = client.create_assessment(request)
+    response = client.create_assessment(request)
 
-        # Check if the token is valid.
-        if not response.token_properties.valid:
-            print(
-                "The CreateAssessment call failed because the token was "
-                + "invalid for the following reasons: "
-                + str(response.token_properties.invalid_reason)
-            )
-            return None  # Return None if token is invalid
+    # Check if the token is valid.
+    if not response.token_properties.valid:
+        print(
+            "The CreateAssessment call failed because the token was "
+            + "invalid for the following reasons: "
+            + str(response.token_properties.invalid_reason)
+        )
+        return
 
-        # Check if the expected action was executed.
-        if response.token_properties.action != recaptcha_action:
-            print(
-                "The action attribute in your reCAPTCHA tag does"
-                + " not match the action you are expecting to score"
-            )
-            return None  # Return None if action doesn't match
-
-        # If no issues, return the response
-        return response
-
-    except Exception as e:
-        print(f"Error creating assessment: {e}")
-        return None  # Return None if any exception occurs
-
+    else:
+        # Get the risk score and the reason(s).
+        # For more information on interpreting the assessment, see:
+        # https://cloud.google.com/recaptcha-enterprise/docs/interpret-assessment
+        for reason in response.risk_analysis.reasons:
+            print(reason)
+        print(
+            "The reCAPTCHA score for this token is: "
+            + str(response.risk_analysis.score)
+        )
+        # Get the assessment name (ID). Use this to annotate the assessment.
+        assessment_name = client.parse_assessment_path(response.name).get("assessment")
+        print(f"Assessment name: {assessment_name}")
+    return response
 
 
 def allow_action(token: str, recaptcha_action: str='submit', recaptcha_key: str=recaptcha_site_key, project_id: str = 'deep-lore-428512-u7') -> bool:
