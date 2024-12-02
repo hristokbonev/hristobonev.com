@@ -24,6 +24,9 @@ async def submit_contact(request: Request, name: str = Form(...), email: str = F
 
     g_recaptcha_response = form_data.get("g-recaptcha-response")
 
+    if not g_recaptcha_response:
+        return RedirectResponse(url="/contact", status_code=303)
+
     is_valid = allow_action(token=g_recaptcha_response)
 
     if not is_valid:
