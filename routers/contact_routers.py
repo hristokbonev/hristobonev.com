@@ -21,10 +21,10 @@ async def submit_contact(request: Request, name: str = Form(...), email: str = F
     # Here you can handle the form submission, e.g., send an email or save to a database
 
     form_data = await request.form()
-    
+
     g_recaptcha_response = form_data.get("g-recaptcha-response")
 
-    is_valid = await allow_action(token=g_recaptcha_response)
+    is_valid = allow_action(token=g_recaptcha_response)
 
     if not is_valid:
         return RedirectResponse(url="/contact", status_code=303)
