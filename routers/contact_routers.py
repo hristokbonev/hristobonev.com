@@ -34,12 +34,12 @@ async def submit_contact(request: Request, name: str = Form(...), email: str = F
     g_recaptcha_response = form_data.get("g-recaptcha-response")
 
     if not g_recaptcha_response:
-        return RedirectResponse(url="/contact", status_code=303)
+        return templates.TemplateResponse("contact.html", {"request": request, "message": "Please complete the reCAPTCHA."})
 
     is_valid = allow_action(token=g_recaptcha_response)
 
     if not is_valid:
-        return RedirectResponse(url="/contact", status_code=303)
+        return templates.TemplateResponse("contact.html", {"request": request, "message": "Invalid reCAPTCHA. Please try again."})
     
     send_email(name=name, email=email, content=message)
-    return RedirectResponse(url="/contact", status_code=303)
+    return templates.TemplateResponse("contact.html", {"request": request, "message": "Thank you for your message!"})

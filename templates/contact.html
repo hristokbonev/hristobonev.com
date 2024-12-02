@@ -27,6 +27,10 @@
 
             <button type="submit">Send Message</button>
 
+            {% if message %}
+            <p>{{ message }}</p>
+            {% endif %}
+
         </form>
         <br>
         <p>You can also reach me at <span id="email-link"></span></p>
