@@ -25,7 +25,9 @@
             </div>
 
             {% if message %}
-            <p>{{ message }}</p>
+            <p style="color: green;">{{ message }}</p>
+            {% elif error %}
+            <p style="color: red;">{{ error }}</p>
             {% endif %}
 
             <button type="submit">Send Message</button>
