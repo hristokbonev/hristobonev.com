@@ -4,8 +4,17 @@ from fastapi.responses import RedirectResponse
 from common.email_services import send_email
 from common.captcha_services import allow_action
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
+
+credentials_json = os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")
+
+credentials_path = "/tmp/google-credentials.json"
+with open(credentials_path, "w") as f:
+    f.write(credentials_json)
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
 
 router = APIRouter(prefix="/contact", tags=["Contact"])
 templates = Jinja2Templates(directory="templates")

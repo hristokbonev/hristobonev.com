@@ -13,14 +13,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-credentials_json = os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")
-
-credentials_path = "/tmp/google-credentials.json"
-with open(credentials_path, "w") as f:
-    f.write(credentials_json)
-
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
-
 s3_client = boto3.client('s3')
 
 app = FastAPI()
