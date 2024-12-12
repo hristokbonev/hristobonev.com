@@ -36,7 +36,7 @@ This repository contains the source code for my personal website. The site is bu
 
 ## License
 
-This project is open-source and available under the [specify license if applicable].
+This project is licensed under the [hristokbonev's personal license].
 
 ---
 
