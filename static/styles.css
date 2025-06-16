@@ -70,6 +70,13 @@ header nav ul li a:hover {
     color: #ddd;
 }
 
+/* Make the current page name in the header another colour */
+nav a.active {
+  color: #fff;
+  font-weight: bold;
+  /* or your desired highlight style */
+}
+
 /* Main Content Styles */
 main {
     display: flex;
