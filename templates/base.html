@@ -75,6 +75,15 @@
 
 
     <script>
+            // Select all nav links (script to add a class to the current page name in the header menu
+            document.querySelectorAll('nav a').forEach(link => {
+              if (link.href === window.location.href || 
+                  (link.getAttribute('href') !== '/' && window.location.pathname.startsWith(link.getAttribute('href')))) {
+                link.classList.add('active');
+              }
+            });
+
+        
         // Mobile menu functionality
         document.addEventListener('DOMContentLoaded', function() {
             const menuButton = document.querySelector('.mobile-menu-button');
