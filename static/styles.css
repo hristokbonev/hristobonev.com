@@ -89,6 +89,7 @@ main {
 
 /* Section Styles */
 .section {
+    font-family: 'Oswald', sans-serif;
     flex: 1;
     position: relative;
     display: flex;
