@@ -67,7 +67,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #ddd;
+    color: white;
 }
 
 /* Make the current page name in the header another colour */
