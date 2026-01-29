@@ -20,4 +20,4 @@ centre_image = Photo(name="Myself", url=urljoin(S3_BASE_URL, "media/images/582e4
 
 @router.get('/', response_model=None)
 def serve_homepage(request: Request = None):
-    return templates.TemplateResponse(name='index.html', request=request, context={'left_video': left_video, 'right_video': right_video, 'centre_image': centre_image})
+    return templates.TemplateResponse(name='index.html', request=request, context={'left_video': left_video, 'right_video': right_video, 'centre_image': centre_image, 'current_year': datetime.now().year})
