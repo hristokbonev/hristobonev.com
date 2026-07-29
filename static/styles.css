@@ -583,6 +583,13 @@ footer .footer-content:last-of-type {
     background: rgb(69, 69, 69);
 }
 
+/* Non-clickable variant, for projects with no public repo */
+.project-link-private,
+.project-link-private:hover {
+    background: rgb(105, 105, 105);
+    cursor: default;
+}
+
 .project-link i {
     font-size: 1.1em;
 }
