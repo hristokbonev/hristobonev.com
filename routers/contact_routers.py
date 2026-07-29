@@ -4,6 +4,7 @@ from fastapi.responses import RedirectResponse
 from common.email_services import send_email
 from common.captcha_services import allow_action
 from dotenv import load_dotenv
+import logging
 import os
 
 load_dotenv()
@@ -41,5 +42,12 @@ async def submit_contact(request: Request, name: str = Form(...), email: str = F
     if not is_valid:
         return templates.TemplateResponse("contact.html", {"request": request, "error": "Invalid reCAPTCHA. Please try again."})
     
-    send_email(name=name, email=email, content=message)
+    # A provider failure (expired credits, outage, bad key) must not surface
+    # as a 500 -- the sender gets a message they can act on instead.
+    try:
+        send_email(name=name, email=email, content=message)
+    except Exception:
+        logging.exception("Contact form could not send the email")
+        return templates.TemplateResponse("contact.html", {"request": request, "error": "Sorry, the message could not be sent right now. Please try again later or email me directly."})
+
     return templates.TemplateResponse("contact.html", {"request": request, "message": "Thank you for your message!"})
