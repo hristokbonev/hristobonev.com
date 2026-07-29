@@ -67,4 +67,10 @@ def create_assessment(
 def allow_action(token: str, recaptcha_action: str='submit', recaptcha_key: str=recaptcha_site_key, project_id: str = 'deep-lore-428512-u7') -> bool:
     
     response = create_assessment(token=token, recaptcha_action=recaptcha_action, recaptcha_key=recaptcha_key, project_id=project_id)
+
+    # create_assessment returns None for an invalid, expired or already-used
+    # token, so the caller sees a failed check rather than an AttributeError.
+    if response is None:
+        return False
+
     return response.risk_analysis.score > 0.5
